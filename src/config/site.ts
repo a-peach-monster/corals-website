@@ -18,10 +18,7 @@ export const siteConfig = {
 
   contact: {
     email: 'info@beikvot-haotzar.co.il',
-    phone: '050-0000000',
     whatsapp: 'https://wa.me/972500000000',
-    instagram: 'https://instagram.com/beikvot.haotzar',
-    facebook: 'https://facebook.com/beikvot.haotzar',
   },
 
   /**

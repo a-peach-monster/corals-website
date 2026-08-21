@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import logo from '@/assets/images/logo/logo-small.png';
 import footerBg from '@/assets/images/decorative/footer.jpg';
@@ -36,26 +35,6 @@ export default function Footer() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <a
-              href={siteConfig.contact.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="אינסטגרם"
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
-            >
-              <Instagram className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
-            <a
-              href={siteConfig.contact.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="פייסבוק"
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
-            >
-              <Facebook className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
-          </div>
           <span className="text-xs text-white/60">
             © {new Date().getFullYear()} בעקבות האוצר
           </span>

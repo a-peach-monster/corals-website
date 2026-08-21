@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import ScrollToHash from '@/components/layout/ScrollToHash';
 import AccessibilityWidget from '@/components/ui/AccessibilityWidget';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 import Home from '@/pages/Home';
 import Blog from '@/pages/Blog';
 import BlogPost from '@/pages/BlogPost';
@@ -66,6 +67,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <AccessibilityWidget />
+      <ScrollToTop />
     </>
   );
 }

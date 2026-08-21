@@ -52,8 +52,7 @@ export default function PrivacyPage() {
 
       <h2>יצירת קשר</h2>
       <p>
-        לשאלות בנוגע למדיניות הפרטיות ניתן לפנות בדוא"ל {siteConfig.contact.email} או בטלפון{' '}
-        {siteConfig.contact.phone}.
+        לשאלות בנוגע למדיניות הפרטיות ניתן לפנות בדוא"ל {siteConfig.contact.email}.
       </p>
     </LegalLayout>
   );

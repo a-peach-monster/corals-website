@@ -43,9 +43,6 @@ export default function AccessibilityPage() {
         <li>
           <strong>דוא"ל:</strong> {contact.email}
         </li>
-        <li>
-          <strong>טלפון:</strong> {contact.phone}
-        </li>
       </ul>
 
       <p>הצהרת נגישות זו עודכנה לאחרונה בתאריך {accessibility.statementLastUpdated}.</p>

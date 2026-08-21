@@ -15,7 +15,7 @@ export default function BlogPost() {
 
   return (
     <main className="bg-white">
-      <div className="bg-secondary-blue pb-8 pt-32 sm:pt-40">
+      <div className="pb-8 pt-32 sm:pt-40">
         <Container className="max-w-3xl px-5 sm:px-6 lg:px-8">
           <Link
             to="/blog"
@@ -27,7 +27,7 @@ export default function BlogPost() {
         </Container>
       </div>
 
-      <Container className="max-w-3xl px-5 py-10 sm:px-6 lg:px-8">
+      <Container className="max-w-3xl px-5 pb-24 pt-10 sm:px-6 lg:px-8">
         {post.coverImage && (
           <img
             src={resolvePublicPath(post.coverImage)}

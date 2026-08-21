@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { navLinks, siteConfig } from '@/config/site';
 import Button from '@/components/ui/Button';
@@ -8,6 +8,10 @@ import logo from '@/assets/images/logo/logo.png';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
+  const isTransparent = isHomePage && !isScrolled;
 
   useEffect(() => {
     function onScroll() {
@@ -28,9 +32,9 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/85 shadow-card backdrop-blur-md'
-          : 'bg-transparent'
+        isTransparent
+          ? 'bg-transparent'
+          : 'bg-white/85 shadow-card backdrop-blur-md'
       }`}
     >
       <div className="container mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-6 lg:px-8">
@@ -43,14 +47,18 @@ export default function Header() {
             <Link
               key={link.href}
               to={`/${link.href}`}
-              className="font-heading text-sm font-medium text-ink transition-colors hover:text-white"
+              className={`font-heading text-sm font-medium text-ink transition-colors ${
+                isTransparent ? 'hover:text-white' : 'hover:text-primary-dark'
+              }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
             to="/blog"
-            className="font-heading text-sm font-medium text-ink transition-colors hover:text-white"
+            className={`font-heading text-sm font-medium text-ink transition-colors ${
+              isTransparent ? 'hover:text-white' : 'hover:text-primary-dark'
+            }`}
           >
             בלוג
           </Link>

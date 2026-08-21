@@ -8,8 +8,10 @@ import {
   Plus,
   RotateCcw,
   X,
+  MessageCircle,
 } from 'lucide-react';
 import { useAccessibility } from '@/hooks/useAccessibility';
+import { siteConfig } from '@/config/site';
 
 /**
  * Floating accessibility toolbar ("bubble") required under the Israeli
@@ -43,7 +45,7 @@ export default function AccessibilityWidget() {
   }, [isOpen]);
 
   return (
-    <div ref={panelRef} className="fixed bottom-5 left-5 z-50 flex flex-col items-start gap-3">
+    <div ref={panelRef} className="fixed bottom-16 left-5 z-50 flex flex-col items-end gap-3">
       {isOpen && (
         <div className="w-72 rounded-2xl border border-border bg-white p-4 shadow-soft animate-fade-in-up">
           <div className="mb-3 flex items-center justify-between">
@@ -143,6 +145,16 @@ export default function AccessibilityWidget() {
           </a>
         </div>
       )}
+
+      <a
+        href={siteConfig.contact.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="צ'אט בוואטסאפ"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft transition-transform hover:scale-105 active:scale-95"
+      >
+        <MessageCircle className="h-7 w-7" aria-hidden="true" />
+      </a>
 
       <button
         type="button"
