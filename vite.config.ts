@@ -2,11 +2,13 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Relative base so the build works when hosted from a sub-path
-// (e.g. GitHub Pages project sites) as well as a domain root.
+// Absolute sub-path base for this GitHub Pages project site
+// (kaopiu.github.io/corals-website/). Must match BrowserRouter's
+// basename in src/main.tsx (read via import.meta.env.BASE_URL) so
+// React Router's routes resolve against the real deployed path.
 export default defineConfig({
   plugins: [react()],
-  base: "./",
+  base: "/corals-website/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
