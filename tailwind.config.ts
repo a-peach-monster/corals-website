@@ -79,12 +79,17 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-1 * var(--marquee-distance, 50%)))" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         float: "float 5s ease-in-out infinite",
         "spin-slow": "spin-slow 18s linear infinite",
         shimmer: "shimmer 2.5s linear infinite",
+        marquee: "marquee 32s linear infinite",
       },
     },
   },

@@ -18,7 +18,7 @@ export default function SectionHeading({
   children,
   className = '',
 }: SectionHeadingProps) {
-  const alignment = align === 'center' ? 'text-center items-center mx-auto' : 'text-right items-end';
+  const alignment = align === 'center' ? 'text-center items-center mx-auto' : 'text-right items-start';
 
   return (
     <Reveal className={`flex flex-col gap-4 ${alignment} max-w-3xl ${className}`}>

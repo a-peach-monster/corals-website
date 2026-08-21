@@ -6,6 +6,7 @@ import Audience from '@/components/sections/Audience';
 import WhatsIncluded from '@/components/sections/WhatsIncluded';
 import Faq from '@/components/sections/Faq';
 import Gallery from '@/components/sections/Gallery';
+import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhatsIncluded />
       <Faq />
       <Gallery />
+      <Contact />
     </>
   );
 }

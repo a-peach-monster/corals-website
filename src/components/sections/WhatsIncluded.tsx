@@ -15,10 +15,10 @@ const iconMap: Record<string, typeof BookOpen> = {
 
 export default function WhatsIncluded() {
   return (
-    <section id="included" className="relative overflow-hidden bg-section-gradient py-20 lg:py-28">
-      <Container className="grid items-center gap-14 px-5 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:px-8">
-        <Reveal className="order-2 lg:order-1">
-          <div className="overflow-hidden rounded-xl3 shadow-soft">
+    <section id="included" className="relative overflow-hidden bg-surface-sky py-20 lg:py-28">
+      <Container className="grid items-stretch gap-14 px-5 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:px-8">
+        <Reveal className="order-2 lg:order-1 lg:h-full">
+          <div className="h-full min-h-[320px] overflow-hidden rounded-xl3 shadow-soft">
             <img
               src={slimeMap}
               alt="דמות קסומה מציגה מפת אוצר ותיבת אוצרות מתוך ערכת בעקבות האוצר"

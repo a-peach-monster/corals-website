@@ -11,8 +11,8 @@ const journeyTraits = [
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-section-gradient py-20 lg:py-28">
-      <Container className="grid items-center gap-14 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <section id="about" className="relative overflow-hidden bg-surface-sky py-20 lg:py-28">
+      <Container className="grid items-stretch gap-14 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal className="order-2 flex flex-col gap-6 lg:order-1">
           <SectionHeading align="right" eyebrow="הסיפור שמאחורי המסע" title="אודות התוכנית" />
 
@@ -58,8 +58,8 @@ export default function About() {
           </p>
         </Reveal>
 
-        <Reveal delayMs={120} className="order-1 lg:order-2">
-          <div className="overflow-hidden rounded-xl3 shadow-soft">
+        <Reveal delayMs={120} className="order-1 lg:order-2 lg:h-full">
+          <div className="h-full min-h-[320px] overflow-hidden rounded-xl3 shadow-soft">
             <img
               src={castleScene}
               alt="איור נופי של טירה מוקפת בים, הרים ואי קסום - עולם המסע של בעקבות האוצר"

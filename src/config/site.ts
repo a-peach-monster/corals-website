@@ -51,5 +51,5 @@ export const navLinks: NavLink[] = [
   { label: 'המלצות', href: '#testimonials' },
   { label: 'מה כוללת הערכה', href: '#included' },
   { label: 'שאלות נפוצות', href: '#faq' },
-  { label: 'יצירת קשר', href: '#footer' },
+  { label: 'יצירת קשר', href: '#contact' },
 ];

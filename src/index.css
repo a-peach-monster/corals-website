@@ -137,11 +137,3 @@ h4 {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Snap gallery */
-.snap-x-mandatory {
-  scroll-snap-type: x mandatory;
-}
-.snap-center-item {
-  scroll-snap-align: center;
-}
