@@ -1,0 +1,147 @@
+@import "@fontsource/rubik/400.css";
+@import "@fontsource/rubik/500.css";
+@import "@fontsource/rubik/600.css";
+@import "@fontsource/rubik/700.css";
+@import "@fontsource/rubik/800.css";
+@import "@fontsource/assistant/400.css";
+@import "@fontsource/assistant/500.css";
+@import "@fontsource/assistant/600.css";
+@import "@fontsource/assistant/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Single source of truth for the brand palette.
+ * Change a value here and it propagates through every Tailwind utility
+ * (bg-primary-dark, text-accent-gold, border-border, ...) across the site.
+ */
+:root {
+  /* Brand & Theme Colors */
+  --color-primary-dark: #2e5339;
+  --color-primary-light: #82b84d;
+  --color-secondary-blue: #428bca;
+  --color-accent-terracotta: #d9534f;
+  --color-accent-gold: #e8a838;
+  --color-accent-pink: #e87a90;
+
+  /* Backgrounds & Surfaces */
+  --color-bg-sky: #f0f8ff;
+  --color-surface-parchment: #faf3e0;
+
+  /* Typography & Neutrals */
+  --color-text-main: #2c221e;
+  --color-text-muted: #6c757d;
+  --color-border: #dde2e5;
+
+  color-scheme: light;
+}
+
+/* Accessibility toolbar: high-contrast mode */
+html.a11y-contrast {
+  --color-primary-dark: #163420;
+  --color-text-main: #000000;
+  --color-text-muted: #1a1a1a;
+  --color-bg-sky: #ffffff;
+  --color-surface-parchment: #ffffff;
+  --color-border: #000000;
+}
+
+/* Accessibility toolbar: font-size scale */
+html.a11y-font-lg {
+  font-size: 112.5%;
+}
+html.a11y-font-xl {
+  font-size: 125%;
+}
+
+/* Accessibility toolbar: underline all links for clarity */
+html.a11y-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+/* Accessibility toolbar: pause decorative motion */
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-body text-ink antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-heading;
+}
+
+::selection {
+  background-color: var(--color-accent-gold);
+  color: var(--color-text-main);
+}
+
+/* Focus states visible for keyboard users (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid var(--color-secondary-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar polish (WebKit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-sky);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 999px;
+}
+
+/* Scroll-reveal utility, toggled by useScrollReveal via IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Snap gallery */
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+.snap-center-item {
+  scroll-snap-align: center;
+}

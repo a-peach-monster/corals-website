@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2E5339" />
+    <meta
+      name="description"
+      content="בעקבות האוצר - ערכה חווייתית מוכנה להפעלה לגיל הרך, המפתחת חוסן רגשי, תפקודים ניהוליים וכישורים חברתיים דרך מסע הרפתקאות קסום. מיועדת לגננות, מטפלים ומנחי קבוצות."
+    />
+    <meta property="og:title" content="בעקבות האוצר - מסע קסום של חברות ורגשות" />
+    <meta
+      property="og:description"
+      content="ערכה חווייתית מוכנה להפעלה לגיל הרך, המפתחת חוסן רגשי וכישורים חברתיים דרך מסע הרפתקאות קסום."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="he_IL" />
+    <title>בעקבות האוצר | מסע קסום של חברות ורגשות</title>
+    <!-- Decodes the redirect produced by public/404.html on GitHub Pages so
+         React Router receives the real path. No-op on hosts with proper
+         SPA rewrites (Vercel/Netlify/Cloudflare Pages via vercel.json / _redirects). -->
+    <script>
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
