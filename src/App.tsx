@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Layout from '@/components/layout/Layout';
 import ScrollToHash from '@/components/layout/ScrollToHash';
 import AccessibilityWidget from '@/components/ui/AccessibilityWidget';
 import Home from '@/pages/Home';
+import Blog from '@/pages/Blog';
+import BlogPost from '@/pages/BlogPost';
 import TermsPage from '@/pages/TermsPage';
 import PrivacyPage from '@/pages/PrivacyPage';
 import AccessibilityPage from '@/pages/AccessibilityPage';
@@ -17,41 +18,49 @@ export default function App() {
         <Route
           path="/"
           element={
-            <>
-              <Header />
+            <Layout>
               <Home />
-              <Footer />
-            </>
+            </Layout>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <Layout>
+              <Blog />
+            </Layout>
+          }
+        />
+        <Route
+          path="/blog/:slug"
+          element={
+            <Layout>
+              <BlogPost />
+            </Layout>
           }
         />
         <Route
           path="/terms"
           element={
-            <>
-              <Header />
+            <Layout>
               <TermsPage />
-              <Footer />
-            </>
+            </Layout>
           }
         />
         <Route
           path="/privacy"
           element={
-            <>
-              <Header />
+            <Layout>
               <PrivacyPage />
-              <Footer />
-            </>
+            </Layout>
           }
         />
         <Route
           path="/accessibility"
           element={
-            <>
-              <Header />
+            <Layout>
               <AccessibilityPage />
-              <Footer />
-            </>
+            </Layout>
           }
         />
         <Route path="*" element={<NotFound />} />

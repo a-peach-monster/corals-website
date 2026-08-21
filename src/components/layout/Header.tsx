@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { navLinks, siteConfig } from '@/config/site';
 import Button from '@/components/ui/Button';
@@ -33,20 +34,26 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-6 lg:px-8">
-        <a href="#home" className="flex items-center gap-2" aria-label={siteConfig.name}>
+        <Link to="/#home" className="flex items-center gap-2" aria-label={siteConfig.name}>
           <img src={logo} alt={siteConfig.name} className="h-12 w-12 sm:h-14 sm:w-14" />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="ניווט ראשי">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={`/${link.href}`}
               className="font-heading text-sm font-medium text-ink transition-colors hover:text-white"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
+          <Link
+            to="/blog"
+            className="font-heading text-sm font-medium text-ink transition-colors hover:text-white"
+          >
+            בלוג
+          </Link>
         </nav>
 
         <div className="hidden lg:block">
@@ -85,15 +92,22 @@ export default function Header() {
             aria-label="ניווט ראשי - מובייל"
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={`/${link.href}`}
                 onClick={() => setIsMenuOpen(false)}
                 className="font-heading text-2xl font-semibold text-ink transition-colors hover:text-primary-dark"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
+            <Link
+              to="/blog"
+              onClick={() => setIsMenuOpen(false)}
+              className="font-heading text-2xl font-semibold text-ink transition-colors hover:text-primary-dark"
+            >
+              בלוג
+            </Link>
             <Button
               href={siteConfig.checkoutUrl}
               target="_blank"

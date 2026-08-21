@@ -36,3 +36,12 @@ export interface GalleryImage {
   src: string;
   alt: string;
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  coverImage: string;
+  content: string;
+}
