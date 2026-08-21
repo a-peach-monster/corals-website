@@ -4,6 +4,7 @@ import { siteConfig } from '@/config/site';
 import Container from '@/components/ui/Container';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
+import contactBg from '@/assets/images/decorative/contact.jpg';
 
 const inputClasses =
   'rounded-xl2 border border-border bg-white px-4 py-3 text-ink outline-none transition-colors focus:border-primary-dark';
@@ -104,54 +105,63 @@ export default function Contact() {
 
           <Reveal
             delayMs={100}
-            className="flex flex-col justify-between gap-8 rounded-xl3 bg-primary-dark p-7 text-white shadow-card sm:p-9"
+            className="relative min-h-[420px] overflow-hidden rounded-xl3 shadow-card"
           >
-            <div className="flex flex-col gap-5">
-              <h3 className="font-heading text-xl font-bold">פרטי התקשרות</h3>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="flex items-center gap-3 text-white/90 transition-colors hover:text-white"
-              >
-                <Mail className="h-5 w-5" aria-hidden="true" />
-                {siteConfig.contact.email}
-              </a>
-              <a
-                href={`tel:${siteConfig.contact.phone}`}
-                className="flex items-center gap-3 text-white/90 transition-colors hover:text-white"
-              >
-                <Phone className="h-5 w-5" aria-hidden="true" />
-                {siteConfig.contact.phone}
-              </a>
-              <a
-                href={siteConfig.contact.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/90 transition-colors hover:text-white"
-              >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                וואטסאפ
-              </a>
-            </div>
+            <img
+              src={contactBg}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 -z-10 h-full w-full object-cover"
+            />
 
-            <div className="flex items-center gap-3">
-              <a
-                href={siteConfig.contact.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="אינסטגרם"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
-              >
-                <Instagram className="h-5 w-5" aria-hidden="true" />
-              </a>
-              <a
-                href={siteConfig.contact.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="פייסבוק"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
-              >
-                <Facebook className="h-5 w-5" aria-hidden="true" />
-              </a>
+            <div className="absolute inset-x-0 top-[10%] z-10 flex items-center justify-between gap-6 bg-ink/55 px-7 py-5 shadow-soft backdrop-blur-sm sm:px-9">
+              <div className="flex flex-col gap-2.5">
+                <h3 className="font-heading text-xl font-bold text-white">פרטי התקשרות</h3>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="flex items-center gap-3 text-base font-bold text-white transition-colors hover:text-white/80"
+                >
+                  <Mail className="h-5 w-5" aria-hidden="true" />
+                  {siteConfig.contact.email}
+                </a>
+                <a
+                  href={`tel:${siteConfig.contact.phone}`}
+                  className="flex items-center gap-3 text-base font-bold text-white transition-colors hover:text-white/80"
+                >
+                  <Phone className="h-5 w-5" aria-hidden="true" />
+                  {siteConfig.contact.phone}
+                </a>
+                <a
+                  href={siteConfig.contact.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-base font-bold text-white transition-colors hover:text-white/80"
+                >
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  וואטסאפ
+                </a>
+              </div>
+
+              <div className="flex flex-shrink-0 items-center gap-3">
+                <a
+                  href={siteConfig.contact.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="אינסטגרם"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-accent-pink shadow-soft transition-transform duration-200 hover:scale-110"
+                >
+                  <Instagram className="h-6 w-6" aria-hidden="true" />
+                </a>
+                <a
+                  href={siteConfig.contact.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="פייסבוק"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-secondary-blue shadow-soft transition-transform duration-200 hover:scale-110"
+                >
+                  <Facebook className="h-6 w-6" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>

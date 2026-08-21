@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Facebook, Instagram } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import logo from '@/assets/images/logo/logo-small.png';
+import footerBg from '@/assets/images/decorative/footer.jpg';
 
 const legalLinks = [
   { label: 'תנאי שימוש', to: '/terms' },
@@ -11,7 +12,15 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-primary-dark text-white">
+    <footer id="footer" className="relative overflow-hidden text-white">
+      <img
+        src={footerBg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-bottom"
+      />
+      <div className="absolute inset-0 -z-10 bg-ink/55" />
+
       <div className="container mx-auto flex max-w-7xl flex-col items-center gap-3 px-5 py-5 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <img src={logo} alt={siteConfig.name} className="h-8 w-8" />
