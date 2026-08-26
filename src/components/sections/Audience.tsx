@@ -23,7 +23,7 @@ export default function Audience() {
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow-card">
                 {item.emoji}
               </span>
-              <h3 className="font-heading text-lg font-bold text-ink">{item.title}</h3>
+              <h3 className="whitespace-pre-line font-heading text-lg font-bold text-ink">{item.title}</h3>
               <p className="text-sm leading-relaxed text-ink-muted">{item.description}</p>
             </Reveal>
           ))}

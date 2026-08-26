@@ -1,4 +1,4 @@
-import { BookOpen, FileStack, MapPinned, ScrollText, Users2 } from 'lucide-react';
+import { BookOpen, FileStack, MapPinned, ScrollText, Users2, Music, Mail, Gamepad2 } from 'lucide-react';
 import { includedIntro, includedItems } from '@/data/included';
 import Container from '@/components/ui/Container';
 import Reveal from '@/components/ui/Reveal';
@@ -11,6 +11,9 @@ const iconMap: Record<string, typeof BookOpen> = {
   map: MapPinned,
   certificates: ScrollText,
   appendices: FileStack,
+  'theme-song': Music,
+  'parent-letters': Mail,
+  'digital-game': Gamepad2,
 };
 
 export default function WhatsIncluded() {

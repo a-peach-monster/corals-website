@@ -1,7 +1,7 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'ghost';
-type Size = 'md' | 'lg';
+type Size = 'sm' | 'md' | 'lg';
 
 const base =
   'inline-flex items-center justify-center gap-2 rounded-full font-heading font-semibold ' +
@@ -19,6 +19,7 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
+  sm: 'px-5 py-2 text-sm',
   md: 'px-6 py-3 text-base',
   lg: 'px-8 py-4 text-lg',
 };

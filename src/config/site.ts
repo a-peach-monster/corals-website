@@ -6,18 +6,17 @@
 
 export const siteConfig = {
   name: 'בעקבות האוצר',
-  tagline: 'מסע קסום של חברות ורגשות',
+  tagline: 'הופכים למידה רגשית להרפתקה קסומה',
   creator: 'קורל מאסטי-שטרנברג',
   locale: 'he-IL',
 
   /**
    * PayMe hosted checkout link for the kit purchase.
-   * TODO: replace with the real PayMe checkout URL before going live.
    */
-  checkoutUrl: 'https://payme.io/REPLACE_WITH_YOUR_PAYME_CHECKOUT_LINK',
+  checkoutUrl: 'https://live.payme.io/sale/template/SALE1787-264925FR-DQXPGKCE-JHDZ3UP1',
 
   contact: {
-    email: 'info@beikvot-haotzar.co.il',
+    email: 'Coralmastey@gmail.com',
     whatsapp: 'https://wa.me/972500000000',
   },
 
