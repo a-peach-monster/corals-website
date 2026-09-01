@@ -8,7 +8,7 @@ import react from "@vitejs/plugin-react";
 // React Router's routes resolve against the real deployed path.
 export default defineConfig({
   plugins: [react()],
-  base: "/corals-website/",
+  base: "/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

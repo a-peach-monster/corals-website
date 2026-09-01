@@ -49,7 +49,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="bg-surface-parchment py-20 lg:py-28">
+    <section id="testimonials" className="bg-surface-parchment py-16 lg:py-24">
       <Container className="flex flex-col items-center gap-12 px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="מה אומרים עלינו"

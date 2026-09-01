@@ -6,7 +6,7 @@ import FeatureIcon from '@/components/ui/FeatureIcon';
 
 export default function Features() {
   return (
-    <section id="features" className="bg-white py-20 lg:py-28">
+    <section id="features" className="bg-white py-16 lg:py-24">
       <Container className="flex flex-col items-center gap-14 px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="למה בעקבות האוצר"

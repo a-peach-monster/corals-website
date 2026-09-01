@@ -30,39 +30,35 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
+    <header className="fixed inset-x-0 top-4 z-40 px-4 flex justify-center transition-all duration-300">
+      <div className={`container mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-2 sm:px-6 lg:px-8 rounded-full backdrop-blur-md shadow-card transition-all duration-300 ${
         isTransparent
-          ? 'bg-transparent'
-          : 'bg-white/85 shadow-card backdrop-blur-md'
-      }`}
-    >
-      <div className="container mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-6 lg:px-8">
-        <Link to="/#home" className="flex items-center gap-2" aria-label={siteConfig.name}>
-          <img src={logo} alt={siteConfig.name} className="h-12 w-12 sm:h-14 sm:w-14" />
-        </Link>
-
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="ניווט ראשי">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={`/${link.href}`}
-              className={`font-heading text-sm font-medium text-ink transition-colors ${
-                isTransparent ? 'hover:text-white' : 'hover:text-primary-dark'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            to="/blog"
-            className={`font-heading text-sm font-medium text-ink transition-colors ${
-              isTransparent ? 'hover:text-white' : 'hover:text-primary-dark'
-            }`}
-          >
-            בלוג
+          ? 'bg-white/60'
+          : 'bg-white/85'
+      }`}>
+        <div className="flex items-center gap-8">
+          <Link to="/#home" className="flex items-center gap-2" aria-label={siteConfig.name}>
+            <img src={logo} alt={siteConfig.name} className="h-12 w-12 sm:h-14 sm:w-14" />
           </Link>
-        </nav>
+
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="ניווט ראשי">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={`/${link.href}`}
+                className="font-heading text-sm font-medium text-ink transition-colors hover:text-primary-dark"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/blog"
+              className="font-heading text-sm font-medium text-ink transition-colors hover:text-primary-dark"
+            >
+              בלוג
+            </Link>
+          </nav>
+        </div>
 
         <div className="hidden lg:block">
           <Button href={siteConfig.checkoutUrl} target="_blank" rel="noopener noreferrer" size="md">

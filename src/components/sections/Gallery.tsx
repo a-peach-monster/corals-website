@@ -5,7 +5,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-surface-sky py-20 lg:py-28">
+    <section id="gallery" className="bg-surface-sky py-16 lg:py-24">
       <Container className="flex flex-col gap-10 px-5 sm:px-6 lg:px-8">
         <SectionHeading
           align="right"
@@ -18,7 +18,7 @@ export default function Gallery() {
         dir="ltr"
         className="mt-10 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
       >
-        <Marquee autoFill pauseOnHover speed={45} gradient={false}>
+        <Marquee autoFill speed={45} gradient={false}>
           {galleryImages.map((image) => (
             <div
               key={image.id}

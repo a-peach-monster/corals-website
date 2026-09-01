@@ -8,7 +8,7 @@ import slime from '@/assets/images/decorative/slime-green.png';
 function HeroCard({ className = '' }: { className?: string }) {
   return (
     <Reveal
-      className={`flex max-w-[30.4rem] flex-col items-center gap-3 rounded-xl3 bg-white/90 p-5 text-center shadow-soft backdrop-blur-md sm:max-w-[34.2rem] sm:p-6 lg:items-start lg:text-right ${className}`}
+      className={`flex max-w-[32.8rem] flex-col items-center gap-3 rounded-xl3 bg-white/90 p-5 text-center shadow-soft backdrop-blur-md sm:max-w-[36.9rem] sm:p-6 lg:items-start lg:text-right ${className}`}
     >
       <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-dark/10 px-3 py-1 text-xs font-semibold text-primary-dark">
         ערכה חווייתית לגיל הרך · {siteConfig.creator}

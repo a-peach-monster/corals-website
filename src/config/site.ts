@@ -24,9 +24,8 @@ export const siteConfig = {
    * No backend is used to pull live Google reviews (would require a
    * server-side API key). Instead the testimonials carousel links out to
    * the public Google Business reviews page.
-   * TODO: replace with the real Google Business "write a review" / listing URL.
    */
-  googleReviewsUrl: 'https://g.page/r/REPLACE_WITH_GOOGLE_BUSINESS_ID/review',
+  googleReviewsUrl: 'https://maps.app.goo.gl/pDXQJS5yve1VZR1n7?g_st=ic',
 
   accessibility: {
     statementLastUpdated: '2026-08-21',

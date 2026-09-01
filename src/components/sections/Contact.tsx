@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-br from-primary-light/10 via-white to-accent-gold/10 py-20 lg:py-28"
+      className="bg-gradient-to-br from-primary-light/10 via-white to-accent-gold/10 py-16 lg:py-24"
     >
       <Container className="flex flex-col gap-8 px-5 sm:px-6 lg:px-8">
         <SectionHeading

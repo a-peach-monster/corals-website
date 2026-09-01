@@ -6,7 +6,7 @@ import compass from '@/assets/images/decorative/compass.png';
 
 export default function Faq() {
   return (
-    <section id="faq" className="bg-accent-pink/10 py-20 lg:py-28">
+    <section id="faq" className="bg-accent-pink/10 py-16 lg:py-24">
       <Container className="flex flex-col items-center gap-4 px-5 sm:px-6 lg:px-8">
         <img
           src={compass}

@@ -5,7 +5,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Audience() {
   return (
-    <section id="audience" className="bg-primary-light/12 py-20 lg:py-28">
+    <section id="audience" className="bg-primary-light/12 py-16 lg:py-24">
       <Container className="flex flex-col items-center gap-14 px-5 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="מיועד עבורכם" title={audienceIntro.title} description={audienceIntro.description}>
           <p className="font-heading text-base font-semibold text-primary-dark">

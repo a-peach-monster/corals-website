@@ -5,7 +5,7 @@ import castleScene from '@/assets/images/decorative/castle-island.jpeg';
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-surface-sky py-20 lg:py-28">
+    <section id="about" className="relative overflow-hidden bg-surface-sky py-16 lg:py-24">
       <Container className="grid items-stretch gap-14 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal className="order-2 flex flex-col gap-6 lg:order-1">
           <SectionHeading align="right" eyebrow="הסיפור שמאחורי המסע" title="אודות התוכנית" />
@@ -22,7 +22,7 @@ export default function About() {
             כגיבורי המסע, הילדים מקבלים תפקיד משמעותי ואחריות בתוך הסיפור. החוויה מחזקת את תחושת המסוגלות העצמית שלהם, מעוררת סקרנות ומעודדת מוטיבציה פנימית להמשיך להשתתף, ללמוד ולגלות. הם לוקחים חלק פעיל במשימות ומבינים שלנוכחות, לרעיונות ולבחירות שלהם יש השפעה אמיתית על המתרחש.
           </p>
 
-          <div className="rounded-xl3 border border-accent-gold/30 bg-accent-gold/10 p-6">
+          <div className="rounded-xl3 border-2 border-primary-light/60 bg-primary-light/20 p-6">
             <p className="font-heading text-base font-bold text-ink">
               התוכנית נוצרה על ידי קורל מאסטי־שטרנברג, פסיכולוגית חינוכית מומחית
             </p>

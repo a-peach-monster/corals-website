@@ -3,7 +3,7 @@ import { includedIntro, includedItems } from '@/data/included';
 import Container from '@/components/ui/Container';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
-import slimeMap from '@/assets/images/decorative/slime-treasure-map.png';
+import margion from '@/assets/images/margion.png';
 
 const iconMap: Record<string, typeof BookOpen> = {
   guidebook: BookOpen,
@@ -18,12 +18,12 @@ const iconMap: Record<string, typeof BookOpen> = {
 
 export default function WhatsIncluded() {
   return (
-    <section id="included" className="relative overflow-hidden bg-surface-sky py-20 lg:py-28">
+    <section id="included" className="relative overflow-hidden bg-surface-sky py-16 lg:py-24">
       <Container className="grid items-stretch gap-14 px-5 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:px-8">
         <Reveal className="order-2 lg:order-1 lg:h-full">
           <div className="h-full min-h-[320px] overflow-hidden rounded-xl3 shadow-soft">
             <img
-              src={slimeMap}
+              src={margion}
               alt="דמות קסומה מציגה מפת אוצר ותיבת אוצרות מתוך ערכת בעקבות האוצר"
               className="h-full w-full object-cover"
             />
