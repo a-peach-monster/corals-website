@@ -6,7 +6,7 @@
 
 export const siteConfig = {
   name: 'בעקבות האוצר',
-  tagline: 'הופכים למידה רגשית להרפתקה קסומה',
+  tagline: 'תכנית רגשית חווייתית לגני ילדים',
   creator: 'קורל מאסטי-שטרנברג',
   locale: 'he-IL',
 
