@@ -9,8 +9,7 @@ export default function Features() {
     <section id="features" className="bg-white py-16 lg:py-24">
       <Container className="flex flex-col items-center gap-14 px-5 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="למה בעקבות האוצר"
-          title="השפעה רחבה"
+          title="דגשים חשובים"
         />
 
         <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
