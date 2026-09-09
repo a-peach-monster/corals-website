@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
+import SEO from '@/components/SEO';
+import { siteConfig } from '@/config/site';
 import { formatPostDate, getPostBySlug, resolvePublicPath } from '@/lib/blog';
 
 export default function BlogPost() {
@@ -15,6 +17,31 @@ export default function BlogPost() {
 
   return (
     <main className="bg-white">
+      <SEO
+        path={`/blog/${post.slug}`}
+        title={`${post.title} | ${siteConfig.name}`}
+        description={post.excerpt || post.title}
+        type="article"
+        image={post.coverImage ? resolvePublicPath(post.coverImage) : undefined}
+        publishedTime={post.date || undefined}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date || undefined,
+          image: post.coverImage ? `${siteConfig.url}${resolvePublicPath(post.coverImage)}` : undefined,
+          author: {
+            '@type': 'Person',
+            name: siteConfig.creator,
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: siteConfig.name,
+          },
+          mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
+        }}
+      />
       <div className="pb-8 pt-32 sm:pt-40">
         <Container className="max-w-3xl px-5 sm:px-6 lg:px-8">
           <Link

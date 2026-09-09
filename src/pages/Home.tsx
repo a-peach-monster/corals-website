@@ -7,10 +7,28 @@ import WhatsIncluded from '@/components/sections/WhatsIncluded';
 import Faq from '@/components/sections/Faq';
 import Gallery from '@/components/sections/Gallery';
 import Contact from '@/components/sections/Contact';
+import SEO from '@/components/SEO';
+import { siteConfig } from '@/config/site';
 
 export default function Home() {
   return (
     <>
+      <SEO
+        path="/"
+        title={`${siteConfig.name} | ${siteConfig.tagline}`}
+        description="בעקבות האוצר היא תכנית רגשית לגני ילדים ולגיל הרך. ערכה חווייתית המקדמת למידה רגשית, מפתחת חוסן רגשי, כישורים חברתיים ומסוגלות דרך מסע והרפתקה שילדים אוהבים."
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: siteConfig.name,
+          url: siteConfig.url,
+          description: siteConfig.tagline,
+          founder: {
+            '@type': 'Person',
+            name: siteConfig.creator,
+          },
+        }}
+      />
       <Hero />
       <Features />
       <About />

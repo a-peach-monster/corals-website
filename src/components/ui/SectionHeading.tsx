@@ -8,6 +8,8 @@ interface SectionHeadingProps {
   align?: 'center' | 'right';
   children?: ReactNode;
   className?: string;
+  /** Heading tag to render. Use "h1" for the page's single main heading (e.g. a top-level page like /blog). Defaults to "h2" for in-page sections. */
+  level?: 'h1' | 'h2';
 }
 
 export default function SectionHeading({
@@ -17,8 +19,10 @@ export default function SectionHeading({
   align = 'center',
   children,
   className = '',
+  level = 'h2',
 }: SectionHeadingProps) {
   const alignment = align === 'center' ? 'text-center items-center mx-auto' : 'text-right items-start';
+  const HeadingTag = level;
 
   return (
     <Reveal className={`flex flex-col gap-4 ${alignment} max-w-3xl ${className}`}>
@@ -27,9 +31,9 @@ export default function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl md:text-5xl">
+      <HeadingTag className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl md:text-5xl">
         {title}
-      </h2>
+      </HeadingTag>
       {description && (
         <p className="text-lg leading-relaxed text-ink-muted">{description}</p>
       )}

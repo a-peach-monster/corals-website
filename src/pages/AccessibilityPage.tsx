@@ -1,11 +1,17 @@
 import { siteConfig } from '@/config/site';
 import LegalLayout from '@/components/layout/LegalLayout';
+import SEO from '@/components/SEO';
 
 export default function AccessibilityPage() {
   const { accessibility, contact } = siteConfig;
 
   return (
     <LegalLayout title="הצהרת נגישות" updated={accessibility.statementLastUpdated}>
+      <SEO
+        path="/accessibility"
+        title={`הצהרת נגישות | ${siteConfig.name}`}
+        description={`הצהרת הנגישות של אתר "${siteConfig.name}" בהתאם ל${accessibility.standard}.`}
+      />
       <p>
         אתר "{siteConfig.name}" פועל להנגשת שירותיו לכלל הציבור, לרבות אנשים עם מוגבלות, מתוך
         אמונה כי לכל אדם מגיעה גישה שווה למידע ולשירות. האתר תוכנן ונבנה תוך עמידה בדרישות{' '}

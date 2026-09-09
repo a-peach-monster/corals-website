@@ -1,9 +1,15 @@
 import { siteConfig } from '@/config/site';
 import LegalLayout from '@/components/layout/LegalLayout';
+import SEO from '@/components/SEO';
 
 export default function PrivacyPage() {
   return (
     <LegalLayout title="מדיניות פרטיות" updated={siteConfig.accessibility.statementLastUpdated}>
+      <SEO
+        path="/privacy"
+        title={`מדיניות פרטיות | ${siteConfig.name}`}
+        description={`מדיניות הפרטיות של אתר "${siteConfig.name}" - אילו מידע נאסף, כיצד הוא נשמר ולאילו מטרות הוא משמש.`}
+      />
       <p>
         פרטיותכם חשובה לנו. מדיניות זו מסבירה אילו מידע נאסף בעת השימוש באתר "{siteConfig.name}",
         כיצד הוא נשמר ולאילו מטרות הוא משמש.

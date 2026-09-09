@@ -10,6 +10,9 @@ export const siteConfig = {
   creator: 'קורל מאסטי-שטרנברג',
   locale: 'he-IL',
 
+  /** Canonical production origin (no trailing slash) - used for canonical/OG URLs and the sitemap. */
+  url: 'https://www.coralm.net',
+
   /**
    * PayMe hosted checkout link for the kit purchase.
    */

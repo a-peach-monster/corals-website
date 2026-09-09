@@ -1,9 +1,15 @@
 import { siteConfig } from '@/config/site';
 import LegalLayout from '@/components/layout/LegalLayout';
+import SEO from '@/components/SEO';
 
 export default function TermsPage() {
   return (
     <LegalLayout title="תנאי שימוש" updated={siteConfig.accessibility.statementLastUpdated}>
+      <SEO
+        path="/terms"
+        title={`תנאי שימוש | ${siteConfig.name}`}
+        description={`תנאי השימוש והרכישה באתר "${siteConfig.name}", לרבות מדיניות ביטול עסקה בהתאם לחוק הגנת הצרכן.`}
+      />
       <p>
         ברוכים הבאים לאתר "{siteConfig.name}" (להלן: "האתר"). השימוש באתר ובשירותיו, לרבות
         רכישת ערכת "{siteConfig.name}", כפוף לתנאי השימוש המפורטים להלן. גלישה באתר ו/או ביצוע

@@ -17,23 +17,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="he_IL" />
     <title>בעקבות האוצר | תכנית רגשית לגני ילדים ולמידה רגשית</title>
-    <!-- Decodes the redirect produced by public/404.html on GitHub Pages so
-         React Router receives the real path. No-op on hosts with proper
-         SPA rewrites (Vercel/Netlify/Cloudflare Pages via vercel.json / _redirects). -->
-    <script>
-      (function (l) {
-        if (l.search[1] === '/') {
-          var decoded = l.search
-            .slice(1)
-            .split('&')
-            .map(function (s) {
-              return s.replace(/~and~/g, '&');
-            })
-            .join('?');
-          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
   </head>
   <body>
     <div id="root"></div>
