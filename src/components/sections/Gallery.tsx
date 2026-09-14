@@ -13,24 +13,20 @@ import SectionHeading from '@/components/ui/SectionHeading';
 // crawlable image row, then the effect below swaps in the real marquee.
 let MarqueeComponent: ComponentType<MarqueeProps> | null = null;
 
-function GalleryTiles({ className = '' }: { className?: string }) {
-  return (
-    <>
-      {galleryImages.map((image) => (
-        <div
-          key={image.id}
-          className={`w-64 flex-shrink-0 overflow-hidden rounded-xl3 shadow-card sm:w-72 lg:w-80 ${className}`}
-        >
-          <img
-            src={image.src}
-            alt={image.alt}
-            loading="lazy"
-            className="h-72 w-full object-cover"
-          />
-        </div>
-      ))}
-    </>
-  );
+function galleryTiles(className = '') {
+  return galleryImages.map((image) => (
+    <div
+      key={image.id}
+      className={`w-64 flex-shrink-0 overflow-hidden rounded-xl3 shadow-card sm:w-72 lg:w-80 ${className}`}
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        loading="lazy"
+        className="h-72 w-full object-cover"
+      />
+    </div>
+  ));
 }
 
 export default function Gallery() {
@@ -67,12 +63,10 @@ export default function Gallery() {
       >
         {Marquee ? (
           <Marquee autoFill speed={45} gradient={false}>
-            <GalleryTiles className="mx-3" />
+            {galleryTiles('mx-3')}
           </Marquee>
         ) : (
-          <div className="flex overflow-x-auto px-3">
-            <GalleryTiles className="mx-3" />
-          </div>
+          <div className="flex overflow-x-auto px-3">{galleryTiles('mx-3')}</div>
         )}
       </div>
     </section>
