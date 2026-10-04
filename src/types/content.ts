@@ -45,5 +45,7 @@ export interface BlogPost {
   coverImage: string;
   /** Optional smaller image for the blog list; falls back to coverImage. */
   thumbnail?: string;
+  /** Renders the cover and inline images smaller and centered. */
+  compactImages?: boolean;
   content: string;
 }

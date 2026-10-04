@@ -25,6 +25,7 @@ const posts: BlogPost[] = Object.entries(rawPosts)
       excerpt: data.excerpt ?? '',
       coverImage: data.coverImage ?? '',
       thumbnail: data.thumbnail || undefined,
+      compactImages: data.compactImages === 'true',
       content,
     };
   })
