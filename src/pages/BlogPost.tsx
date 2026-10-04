@@ -34,6 +34,7 @@ export default function BlogPost() {
           author: {
             '@type': 'Person',
             name: siteConfig.creator,
+            jobTitle: 'פסיכולוגית חינוכית מומחית',
           },
           publisher: {
             '@type': 'Organization',
@@ -66,7 +67,8 @@ export default function BlogPost() {
         {post.date && (
           <p className="mb-2 text-sm font-semibold text-primary-dark">{formatPostDate(post.date)}</p>
         )}
-        <h1 className="mb-8 text-3xl font-extrabold text-ink sm:text-4xl">{post.title}</h1>
+        <h1 className="mb-3 text-3xl font-extrabold text-ink sm:text-4xl">{post.title}</h1>
+        <p className="mb-8 text-sm font-semibold text-ink-muted">{siteConfig.blogAuthor}</p>
 
         <div
           className="flex flex-col gap-5 text-base leading-relaxed text-ink-muted
