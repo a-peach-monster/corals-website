@@ -44,7 +44,7 @@ export default function BlogPost() {
         }}
       />
       <div className="pb-8 pt-32 sm:pt-40">
-        <Container className="max-w-3xl px-5 sm:px-6 lg:px-8">
+        <Container className="max-w-[690px] px-5 sm:px-8">
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary-dark transition-colors hover:text-primary-light"
@@ -55,14 +55,12 @@ export default function BlogPost() {
         </Container>
       </div>
 
-      <Container className="max-w-3xl px-5 pb-24 pt-10 sm:px-6 lg:px-8">
+      <Container className="max-w-[690px] px-5 pb-24 pt-10 sm:px-8">
         {post.coverImage && (
           <img
             src={resolvePublicPath(post.coverImage)}
             alt=""
-            className={`mb-8 aspect-[16/9] w-full rounded-xl3 object-cover shadow-card ${
-              post.compactImages ? 'mx-auto max-w-[560px]' : ''
-            }`}
+            className="mb-8 aspect-[16/9] w-full rounded-xl3 object-cover shadow-card"
           />
         )}
 
@@ -76,7 +74,7 @@ export default function BlogPost() {
         </div>
 
         <div
-          className={`flex flex-col gap-5 text-base leading-relaxed text-ink-muted
+          className="flex flex-col gap-5 text-base leading-relaxed text-ink-muted
           [&_h2]:mt-6 [&_h2]:font-heading [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-ink
           [&_h3]:mt-4 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-ink
           [&_a]:font-semibold [&_a]:text-primary-dark [&_a]:underline [&_a]:underline-offset-2
@@ -84,8 +82,7 @@ export default function BlogPost() {
           [&_ol]:flex [&_ol]:flex-col [&_ol]:gap-1.5 [&_ol_li]:mr-5 [&_ol_li]:list-decimal
           [&_strong]:font-bold [&_strong]:text-ink
           [&_img]:my-2 [&_img]:w-full [&_img]:rounded-xl2 [&_img]:shadow-card
-          [&_blockquote]:border-r-4 [&_blockquote]:border-primary-light [&_blockquote]:pr-4 [&_blockquote]:italic
-          ${post.compactImages ? '[&_img]:mx-auto [&_img]:max-w-[627px]' : ''}`}
+          [&_blockquote]:border-r-4 [&_blockquote]:border-primary-light [&_blockquote]:pr-4 [&_blockquote]:italic"
         >
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
