@@ -61,7 +61,7 @@ export default function BlogPost() {
             src={resolvePublicPath(post.coverImage)}
             alt=""
             className={`mb-8 aspect-[16/9] w-full rounded-xl3 object-cover shadow-card ${
-              post.compactImages ? 'mx-auto max-w-md' : ''
+              post.compactImages ? 'mx-auto max-w-[560px]' : ''
             }`}
           />
         )}
@@ -85,7 +85,7 @@ export default function BlogPost() {
           [&_strong]:font-bold [&_strong]:text-ink
           [&_img]:my-2 [&_img]:w-full [&_img]:rounded-xl2 [&_img]:shadow-card
           [&_blockquote]:border-r-4 [&_blockquote]:border-primary-light [&_blockquote]:pr-4 [&_blockquote]:italic
-          ${post.compactImages ? '[&_img]:mx-auto [&_img]:max-w-md' : ''}`}
+          ${post.compactImages ? '[&_img]:mx-auto [&_img]:max-w-[627px]' : ''}`}
         >
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
