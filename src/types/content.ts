@@ -43,5 +43,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   coverImage: string;
+  /** Optional smaller image for the blog list; falls back to coverImage. */
+  thumbnail?: string;
   content: string;
 }

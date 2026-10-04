@@ -24,6 +24,7 @@ const posts: BlogPost[] = Object.entries(rawPosts)
       date: data.date ?? '',
       excerpt: data.excerpt ?? '',
       coverImage: data.coverImage ?? '',
+      thumbnail: data.thumbnail || undefined,
       content,
     };
   })

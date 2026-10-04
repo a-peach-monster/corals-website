@@ -44,7 +44,7 @@ export default function Blog() {
                 >
                   <div className="aspect-[16/10] sm:aspect-auto w-full sm:w-2/5 md:w-1/3 sm:h-full overflow-hidden shrink-0">
                     <img
-                      src={resolvePublicPath(post.coverImage)}
+                      src={resolvePublicPath(post.thumbnail ?? post.coverImage)}
                       alt=""
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

@@ -9,7 +9,10 @@ export const siteConfig = {
   tagline: 'תכנית רגשית חווייתית לגני ילדים',
   creator: 'קורל מאסטי-שטרנברג',
   /** Byline shown on every blog post. */
-  blogAuthor: 'קורל מאסטי־שטרנברג, פסיכולוגית חינוכית מומחית',
+  blogAuthor: {
+    name: 'קורל מאסטי־שטרנברג',
+    title: 'פסיכולוגית חינוכית מומחית',
+  },
   locale: 'he-IL',
 
   /** Canonical production origin (no trailing slash) - used for canonical/OG URLs and the sitemap. */
