@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import SEO from '@/components/SEO';
 import { siteConfig } from '@/config/site';
-import { formatPostDate, getPostBySlug, resolvePublicPath } from '@/lib/blog';
+import { formatPostDate, getAllPosts, getPostBySlug, resolvePublicPath } from '@/lib/blog';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -15,6 +15,12 @@ export default function BlogPost() {
     return <Navigate to="/blog" replace />;
   }
 
+  const relatedPosts = getAllPosts()
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 2);
+  const postUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+
   return (
     <main className="bg-white">
       <SEO
@@ -23,25 +29,41 @@ export default function BlogPost() {
         description={post.excerpt || post.title}
         type="article"
         image={post.coverImage ? resolvePublicPath(post.coverImage) : undefined}
+        imageAlt={post.title}
         publishedTime={post.date || undefined}
-        jsonLd={{
+        jsonLd={[{
           '@context': 'https://schema.org',
           '@type': 'BlogPosting',
           headline: post.title,
           description: post.excerpt,
           datePublished: post.date || undefined,
-          image: post.coverImage ? `${siteConfig.url}${resolvePublicPath(post.coverImage)}` : undefined,
+          dateModified: post.date || undefined,
+          inLanguage: 'he',
+          wordCount,
+          image: post.coverImage ? [`${siteConfig.url}${resolvePublicPath(post.coverImage)}`] : undefined,
           author: {
             '@type': 'Person',
             name: siteConfig.creator,
             jobTitle: siteConfig.blogAuthor.title,
+            url: siteConfig.url,
           },
           publisher: {
             '@type': 'Organization',
             name: siteConfig.name,
+            url: siteConfig.url,
+            logo: { '@type': 'ImageObject', url: `${siteConfig.url}/favicon.png` },
           },
-          mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
-        }}
+          mainEntityOfPage: postUrl,
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: siteConfig.name, item: siteConfig.url },
+            { '@type': 'ListItem', position: 2, name: 'בלוג', item: `${siteConfig.url}/blog` },
+            { '@type': 'ListItem', position: 3, name: post.title, item: postUrl },
+          ],
+        }]}
       />
       <div className="pb-8 pt-32 sm:pt-40">
         <Container className="max-w-[690px] px-5 sm:px-8">
@@ -59,7 +81,8 @@ export default function BlogPost() {
         {post.coverImage && (
           <img
             src={resolvePublicPath(post.coverImage)}
-            alt=""
+            alt={post.title}
+            fetchPriority="high"
             className="mb-8 aspect-[16/9] w-full rounded-xl3 object-cover shadow-card"
           />
         )}
@@ -88,13 +111,36 @@ export default function BlogPost() {
             remarkPlugins={[remarkGfm]}
             components={{
               img: ({ src, alt }) => (
-                <img src={typeof src === 'string' ? resolvePublicPath(src) : src} alt={alt ?? ''} />
+                <img
+                  src={typeof src === 'string' ? resolvePublicPath(src) : src}
+                  alt={alt ?? ''}
+                  loading="lazy"
+                  decoding="async"
+                />
               ),
             }}
           >
             {post.content}
           </ReactMarkdown>
         </div>
+
+        {relatedPosts.length > 0 && (
+          <nav aria-label="מאמרים נוספים" className="mt-16 border-t border-primary-light/40 pt-8">
+            <h2 className="mb-4 font-heading text-xl font-bold text-ink">עוד מאמרים בבלוג</h2>
+            <ul className="flex flex-col gap-3">
+              {relatedPosts.map((related) => (
+                <li key={related.slug}>
+                  <Link
+                    to={`/blog/${related.slug}`}
+                    className="font-semibold text-primary-dark underline underline-offset-2 hover:text-primary-light"
+                  >
+                    {related.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </Container>
     </main>
   );

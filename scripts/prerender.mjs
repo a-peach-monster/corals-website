@@ -58,4 +58,36 @@ const urlEntries = routes
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries}\n</urlset>\n`;
 
 await writeFile(join(distDir, 'sitemap.xml'), sitemap, 'utf-8');
+
+// rss.xml - lets feed readers and aggregators discover new posts
+const xmlEscape = (str) =>
+  str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const rssItems = posts
+  .map(
+    (p) =>
+      [
+        '    <item>',
+        `      <title>${xmlEscape(p.title)}</title>`,
+        `      <link>${siteConfig.url}/blog/${p.slug}</link>`,
+        `      <guid>${siteConfig.url}/blog/${p.slug}</guid>`,
+        `      <pubDate>${new Date(p.date).toUTCString()}</pubDate>`,
+        `      <description>${xmlEscape(p.excerpt)}</description>`,
+        '    </item>',
+      ].join('\n'),
+  )
+  .join('\n');
+const rss = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<rss version="2.0">',
+  '  <channel>',
+  `    <title>${xmlEscape(siteConfig.name)} - בלוג</title>`,
+  `    <link>${siteConfig.url}/blog</link>`,
+  '    <description>מאמרים וטיפים להורים ואנשי חינוך על התפתחות רגשית-חברתית בגיל הרך</description>',
+  '    <language>he</language>',
+  rssItems,
+  '  </channel>',
+  '</rss>',
+  '',
+].join('\n');
+await writeFile(join(distDir, 'rss.xml'), rss, 'utf-8');
 console.log(`wrote sitemap.xml with ${routes.length} URLs`);
