@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import SEO from '@/components/SEO';
+import ShareButtons from '@/components/ShareButtons';
 import { siteConfig } from '@/config/site';
 import { formatPostDate, getAllPosts, getPostBySlug, resolvePublicPath } from '@/lib/blog';
 
@@ -124,8 +125,10 @@ export default function BlogPost() {
           </ReactMarkdown>
         </div>
 
+        <ShareButtons url={postUrl} title={post.title} />
+
         {relatedPosts.length > 0 && (
-          <nav aria-label="מאמרים נוספים" className="mt-16 border-t border-primary-light/40 pt-8">
+          <nav aria-label="מאמרים נוספים" className="mt-8 border-t border-primary-light/40 pt-8">
             <h2 className="mb-4 font-heading text-xl font-bold text-ink">עוד מאמרים בבלוג</h2>
             <ul className="flex flex-col gap-3">
               {relatedPosts.map((related) => (
