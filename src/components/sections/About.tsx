@@ -1,7 +1,7 @@
 import Container from '@/components/ui/Container';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
-import castleScene from '@/assets/images/decorative/castle-island.jpeg';
+import castleScene from '@/assets/images/decorative/castle_island_new.jpg';
 
 export default function About() {
   return (

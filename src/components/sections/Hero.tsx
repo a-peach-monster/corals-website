@@ -2,7 +2,7 @@ import { siteConfig } from '@/config/site';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import Reveal from '@/components/ui/Reveal';
-import heroIllustration from '@/assets/images/hero/hero-illustration.jpg';
+import heroIllustration from '@/assets/images/hero/new_hero.jpg';
 import slime from '@/assets/images/decorative/slime-green.png';
 
 function HeroCard({ className = '' }: { className?: string }) {

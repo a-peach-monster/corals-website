@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { siteConfig } from '@/config/site';
-import ogImageDefault from '@/assets/images/hero/hero-illustration.jpg';
+import ogImageDefault from '@/assets/images/hero/new_hero.jpg';
 
 interface SEOProps {
   /** Route path starting with "/" (e.g. "/blog/my-post"), used to build the canonical + og:url. */
